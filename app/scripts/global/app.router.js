@@ -11,11 +11,11 @@
       .state('home', {
         url: '/home',
         templateUrl: '../templates/home-min.html'
-      })/*.state('cargos', {
+      }).state('cargos', {
         url: '/cargos',
-        templateUrl: '../templates/cargos/listar-cargos-min.html',
-        controller: 'CargosCtrl as ctrl'
-      })*/;
+        templateUrl: '../templates/cargos/cargos-lista-min.html',
+        controller: 'CargosListaCtrl as ctrl'
+      });
     $urlRouterProvider.otherwise('home');
   }
 })();
