@@ -1,0 +1,13 @@
+.navBardemoBasicUsage md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0; 
+}
+
+._md-nav-bar-list{
+  background-color: #084D6E;
+}
+
+._md-nav-button-text span{
+  color: white;
+}

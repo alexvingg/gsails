@@ -27,12 +27,16 @@
             + Import stylesheets from other directories
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
-
+    <script>
+      var _urlBase = '<%=sails.config.appUrl%>';
+    </script>
     <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/vendor.min.css">
     <!--STYLES END-->
   </head>
-
-  <body>
+  <body ng-app="app">
     <%- body %>
 
 
@@ -59,6 +63,7 @@
     -->
 
     <!--TEMPLATES-->
+    <script type="text/javascript" src="/jst.js"></script>
     <!--TEMPLATES END-->
 
 
@@ -86,6 +91,9 @@
     -->
 
     <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/vendor.min.js"></script>
+    <script src="/js/script.min.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

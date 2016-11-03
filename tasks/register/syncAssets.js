@@ -12,6 +12,12 @@
  */
 module.exports = function(grunt) {
   grunt.registerTask('syncAssets', [
+    'concat:script',
+    'concat:vendorjs',
+    'concat:vendorcss',
+    'uglify:script',
+    'less:style',
+    'htmlmin:dist',
     'jst:dev',
     'less:dev',
     'sync:dev',
