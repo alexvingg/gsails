@@ -2,6 +2,9 @@
   <div class="md-toolbar-tools">
     <span>Cargos</span>
   </div>
+
+  <md-button class="md-raised" name="cargos/add" ng-click="global.goto('cargos/add')">Novo Cargo</md-button>
+
 </md-toolbar>
 
 <md-toolbar class="md-table-toolbar alternate" ng-show="ctrl.selected.length > 0">
@@ -26,5 +29,5 @@
 </md-table-container>
 
 <md-table-pagination md-limit="ctrl.paging.meta.perPage" md-limit-options="global.optionsPerPage" md-page="ctrl.paging.meta.page" md-total="{{ctrl.paging.meta.total}}"
-  md-on-paginate="ctrl.loadPages" md-label="{page: 'Página:', rowsPerPage: 'Registros por página:', of: 'de'}" md-page-select>
+    md-on-paginate="ctrl.loadPages" md-label="{page: 'Página:', rowsPerPage: 'Registros por página:', of: 'de'}" md-page-select>
 </md-table-pagination>
