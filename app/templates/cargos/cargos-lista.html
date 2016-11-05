@@ -3,13 +3,13 @@
     <span>Cargos</span>
   </div>
 
-  <md-button class="md-raised" name="cargos/add" ng-click="global.goto('cargos/add')">Novo Cargo</md-button>
+  <md-button class="md-raised" name="cargos.add" ng-click="global.goto('cargos.add')">Novo Cargo</md-button>
 
 </md-toolbar>
 
 <md-toolbar class="md-table-toolbar alternate" ng-show="ctrl.selected.length > 0">
   <div class="md-toolbar-tools">
-    <span>{{ctrl.selected.length}} {{ctrl.selected.length > 1 ? 'items' : 'item'}} selected</span>
+    <span>{{ctrl.selected.length}} {{ctrl.selected.length > 1 ? 'items selecionados' : 'item selecionado'}} </span>
   </div>
 </md-toolbar>
 

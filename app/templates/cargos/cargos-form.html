@@ -1,35 +1,23 @@
-<md-toolbar class="md-table-toolbar md-default">
-  <div class="md-toolbar-tools">
-    <span>Adicionar Cargo</span>
-  </div>
-</md-toolbar>
-
-
-<md-content class="md-padding" layout-xs="column" layout="row">
-  <div flex-xs flex-gt-xs="50" layout="column">
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-headline">Adicionar Cargo</span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        <form name="cargosForm">
-          <div layout="row">
-            <md-input-container flex="50">
-              <label>Nome Cargo</label>
-              <input required name="nomeCargo" ng-model="ctrl.cargo.nomeCargo">
-              <div ng-messages="cargosForm.nomeCargo.$error">
-                <div ng-message="required">Nome do Cargo é obrigatório.</div>
-              </div>
-            </md-input-container>
-          </div>
-
-          <md-button ng-click="ctrl.salvar()" class="md-raised" name="cargos/add">Salvar</md-button>
-        </form>
-      </md-card-content>
-    </md-card>
-  </div>
+<div flex layout="row">
+<md-content flex>
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Adicionar Cargo</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <form ng-submit="ctrl.salvar()" name="cargosForm">
+          <md-input-container flex layout="row">
+            <label>Nome Cargo</label>
+            <input required name="nome" ng-model="ctrl.cargo.nome">
+            <div ng-messages="cargosForm.nome.$error">
+              <div ng-message="required">Nome do Cargo é obrigatório.</div>
+            </div>
+          </md-input-container>
+        <md-button type="submit" class="md-raised" name="cargos.add">Salvar</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
 </md-content>
-
-
+</div>

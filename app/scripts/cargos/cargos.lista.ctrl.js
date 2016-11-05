@@ -28,10 +28,11 @@
     }
 
     function orderData(field){
+      vm.selected = [];
       var order = field.startsWith("-") ? field.substring(1) + " desc" : field;
       vm.paging = CargosService.findPaginated(
-        { 
-          'page': vm.paging.meta.page, 
+        {
+          'page': vm.paging.meta.page,
           'per_page': vm.paging.meta.perPage,
           'order': order
         }
