@@ -5,10 +5,12 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
-module.exports = {
+var baseModel  = require('./BaseModel'),
+_          = require('lodash');
 
+module.exports = _.merge({}, baseModel,{
   attributes: {
     nome: 'string'
   }
-};
+});
 

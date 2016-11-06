@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         cwd: 'app/css/',
         src: ['*.css'],
         dest: 'assets/styles',
-        ext: '.css'
+        ext: '.min.css'
       }]
     }
   });

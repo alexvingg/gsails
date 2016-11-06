@@ -4,8 +4,6 @@
  * @description :: Server-side logic for managing cargoes
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-//https://www.npmjs.com/package/sails-pager
-var pager = require('sails-pager');
 
 module.exports = {
 
@@ -14,8 +12,9 @@ module.exports = {
         var currentPage = req.query.page;
         var order = req.query.order;
         var conditions = {};
+        var associatedModel = [];
 
-        pager.paginate(Cargo, conditions, currentPage, perPage, [], order).then(function (records) {
+        Cargo.findPaginated(conditions, currentPage, perPage, associatedModel, order).then(function (records) {
             return res.json(records);
         }).catch(function (err) {
             console.error(err.stack);
