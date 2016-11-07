@@ -20,9 +20,9 @@
         //criar uma factory para troca de paginas
         $mdToast.showSimple("Cargo salvo com sucesso.");
         $state.go("cargos.list");
-      }).catch(function(req){
+      }).catch(function(response){
         //verificar como tratar problemas ao salvar
-        $mdToast.showSimple("Erro ao salvar cargo.");
+        $mdToast.showSimple(response.data.message);
       });
     }
   }
