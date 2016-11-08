@@ -15,24 +15,29 @@
     vm.cargo = {};
 
     if($stateParams.id){
-      vm.cargo = CargosService.find({id:$stateParams.id});
+      vm.cargo = CargosService.get({id:$stateParams.id});
+      vm.dsOperacao = 'Alterar';
+    }else{
+      vm.dsOperacao = 'Adicionar';
     }
 
-    function salvar(){
-      if(vm.cargo.id){
-        CargosService.update({id:vm.cargo.id}, vm.cargo).$promise.then(function (data) {
-          $mdToast.showSimple("Cargo salvo com sucesso.");
-          $state.go("cargos.list");
-        }).catch(function(response){
-          $mdToast.showSimple(response.data.message);
-        });
-      }else{
-          vm.save = CargosService.save(vm.cargo).$promise.then(function(data) {
-          $mdToast.showSimple("Cargo salvo com sucesso.");
-          $state.go("cargos.list");
-        }).catch(function(response){
-          $mdToast.showSimple(response.data.message);
-        });
+    function salvar(cargosForm){
+      if(!cargosForm.$invalid){
+        if(vm.cargo.id){
+          CargosService.update({id:vm.cargo.id}, vm.cargo).$promise.then(function (data) {
+            $mdToast.showSimple("Cargo salvo com sucesso.");
+            $state.go("cargos.list");
+          }).catch(function(response){
+            $mdToast.showSimple(response.data.message);
+          });
+        }else{
+            vm.save = CargosService.save(vm.cargo).$promise.then(function(data) {
+            $mdToast.showSimple("Cargo salvo com sucesso.");
+            $state.go("cargos.list");
+          }).catch(function(response){
+            $mdToast.showSimple(response.data.message);
+          });
+        }
       }
     }
   }

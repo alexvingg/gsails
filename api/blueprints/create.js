@@ -41,7 +41,9 @@ module.exports = function createRecord (req, res) {
           var val = err.invalidAttributes[key];
           obj = err.invalidAttributes[key][0];
         });
-        return res.negotiate(obj);
+        return res.json(422, obj);
+      }else{
+        return res.negotiate(err);
       }
     }
     // if (err) return res.negotiate(err);

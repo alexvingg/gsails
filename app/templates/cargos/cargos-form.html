@@ -3,11 +3,11 @@
   <md-card>
     <md-card-title>
       <md-card-title-text>
-        <span class="md-headline">Adicionar Cargo</span>
+        <span class="md-headline">{{ctrl.dsOperacao}} Cargo</span>
       </md-card-title-text>
     </md-card-title>
     <md-card-content>
-      <form ng-submit="ctrl.salvar()" name="cargosForm">
+      <form ng-submit="ctrl.salvar(cargosForm)" name="cargosForm" novalidate >
           <md-input-container flex layout="row">
             <label>Nome Cargo</label>
             <input required name="nome" ng-model="ctrl.cargo.nome">

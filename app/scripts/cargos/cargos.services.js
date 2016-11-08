@@ -10,14 +10,10 @@
     function CargosService($resource,Global) {
         return $resource(Global.urlBase+'cargo/:id', { id: '@_id' }, {
             update: {
-                url:'cargo/:id',
                 method: 'PUT'
             },
             findPaginated: {
                 url: 'cargo-paginated?page=:page&per_page=:per_page&order=:order'
-            },
-            find: {
-                method:'GET'
             }
         });
     }
