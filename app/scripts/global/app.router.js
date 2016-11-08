@@ -23,7 +23,12 @@
         url: '/add',
         templateUrl: '../templates/cargos/cargos-form-min.html',
         controller: 'CargosFormCtrl as ctrl'
+      }).state('cargos.edit/:id', {
+        url: '/edit/:id',
+        templateUrl: '../templates/cargos/cargos-form-min.html',
+        controller: 'CargosFormCtrl as ctrl'
       });
+
     $urlRouterProvider.otherwise('home');
   }
 })();

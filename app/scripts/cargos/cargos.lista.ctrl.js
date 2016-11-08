@@ -6,13 +6,19 @@
     .module('app')
     .controller('CargosListaCtrl', CargosListaCtrl);
 
-  CargosListaCtrl.$inject = ['CargosService','Global'];
+  CargosListaCtrl.$inject = ['CargosService','Global', '$state'];
 
-  function CargosListaCtrl(CargosService,Global) {
+  function CargosListaCtrl(CargosService,Global, $state) {
     var vm = this;
 
     vm.loadPages = loadPages;
     vm.orderData = orderData;
+
+    vm.edit = editar;
+
+    function editar(_id){
+      $state.go('cargos.edit/:id', {id:_id});
+    }
 
     activate();
 
