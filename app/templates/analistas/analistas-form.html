@@ -1,0 +1,40 @@
+<div flex layout="row">
+<md-content flex>
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{ctrl.dsOperacao}} Analista</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <form ng-submit="ctrl.salvar(analistasForm)" name="analistasForm" novalidate >
+          <md-input-container flex layout="row">
+            <label>Nome</label>
+            <input required name="nome" ng-model="ctrl.analista.nome">
+            <div ng-messages="analistasForm.nome.$error">
+              <div ng-message="required">O campo Nome é obrigatório.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex layout="row">
+            <label>Especialidade</label>
+            <input required name="nome" ng-model="ctrl.analista.especialidade">
+            <div ng-messages="analistasForm.especialidade.$error">
+              <div ng-message="required">O campo Especialidade é obrigatório.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex layout="row">
+            <md-select required name="cargo" ng-model="ctrl.analista.cargo" ng-model-options="{trackBy: '$value.id'}" placeholder="Selecione um Cargo">
+              <md-option ng-value="obj" ng-repeat="obj in ctrl.cargos">{{ obj.nome }}</md-option>
+            </md-select>
+            <div ng-messages="analistasForm.cargo.$error">
+              <div ng-message="required">O Cargo é obrigatório.</div>
+            </div>
+          </md-input-container>
+        <md-button type="submit" class="md-raised" name="analistas.add">Salvar</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+</md-content>
+</div>

@@ -11,7 +11,29 @@ var lodash     = require('lodash');
 module.exports = lodash.merge({}, baseModel,{
 
   attributes: {
-
+    nome: {
+      type: 'string',
+      unique: true,
+      required: true
+    },
+    especialidade: {
+      type: 'string',
+      required: true
+    },
+    cargo:{
+      model: 'cargo'
+    }
+  },
+  validationMessages: {
+    nome: {
+      required: 'O campo Nome deve ser informado.'
+    },
+    especialidade: {
+      required: 'O campo Especialidade deve ser informado.'
+    },
+    cargo: {
+      required: 'O campo Cargo deve ser informado.'
+    }
   }
 });
 

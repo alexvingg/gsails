@@ -27,7 +27,26 @@
         url: '/edit/:id',
         templateUrl: '../templates/cargos/cargos-form-min.html',
         controller: 'CargosFormCtrl as ctrl'
+      })
+      //analista
+      .state('analistas', {
+        abstract: true,
+        url: '/analistas',
+        templateUrl: '../templates/analistas/analistas-min.html',
+      }).state('analistas.list', {
+        url: '/list',
+        templateUrl: '../templates/analistas/analistas-lista-min.html',
+        controller: 'AnalistasListaCtrl as ctrl'
+      }).state('analistas.add', {
+        url: '/add',
+        templateUrl: '../templates/analistas/analistas-form-min.html',
+        controller: 'AnalistasFormCtrl as ctrl'
+      }).state('analistas.edit/:id', {
+        url: '/edit/:id',
+        templateUrl: '../templates/analistas/analistas-form-min.html',
+        controller: 'AnalistasFormCtrl as ctrl'
       });
+      ;
 
     $urlRouterProvider.otherwise('home');
   }

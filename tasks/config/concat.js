@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       dest: '.tmp/public/concat/production.css'
     },
     script: {
-      src: ['app/scripts/**/*.js'],
+      src: ['app/scripts/app.js','app/scripts/**/*.js'],
       dest: '.tmp/public/concat/script.js'
     },
     vendorjs: {

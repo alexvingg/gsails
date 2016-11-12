@@ -67,6 +67,7 @@ module.exports = function updateOneRecord (req, res) {
         if(err.invalidAttributes) {
           err.invalidAttributes = validator(Model, err.invalidAttributes);
           var obj = null;
+          console.info(err);
           Object.keys(err.invalidAttributes).forEach(function(key) {
             var val = err.invalidAttributes[key];
             obj = err.invalidAttributes[key][0];
@@ -79,27 +80,7 @@ module.exports = function updateOneRecord (req, res) {
 
       var updatedRecord = records[0];
 
-      // If we have the pubsub hook, use the Model's publish method
-      // to notify all subscribers about the update.
-      if (req._sails.hooks.pubsub) {
-        if (req.isSocket) { Model.subscribe(req, _.pluck(records, Model.primaryKey)); }
-        Model.publishUpdate(pk, _.cloneDeep(values), !req.options.mirror && req, {
-          previous: _.cloneDeep(matchingRecord.toJSON())
-        });
-      }
-
-      // Do a final query to populate the associations of the record.
-      //
-      // (Note: again, this extra query could be eliminated, but it is
-      //  included by default to provide a better interface for integrating
-      //  front-end developers.)
-      var Q = Model.findOne(updatedRecord[Model.primaryKey]);
-      Q = actionUtil.populateRequest(Q, req);
-      Q.exec(function foundAgain(err, populatedRecord) {
-        if (err) { return res.serverError(err); }
-        if (!populatedRecord) { return res.serverError('Could not find record after updating!'); }
-        res.ok(populatedRecord);
-      }); // </foundAgain>
+      res.ok(updatedRecord);
     });// </updated>
   }); // </found>
 };

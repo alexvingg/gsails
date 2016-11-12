@@ -1,0 +1,43 @@
+<md-toolbar class="md-table-toolbar md-default">
+  <div class="md-toolbar-tools">
+    <span>Analistas</span>
+  </div>
+
+  <md-button class="md-raised" ng-click="global.goto('analistas.add')">Novo Analista</md-button>
+
+</md-toolbar>
+
+<md-toolbar class="md-table-toolbar alternate" ng-show="ctrl.selected.length > 0">
+  <div class="md-toolbar-tools">
+    <span>{{ctrl.selected.length}} {{ctrl.selected.length > 1 ? 'items selecionados' : 'item selecionado'}} </span>
+  </div>
+</md-toolbar>
+
+<md-table-container>
+  <table md-table md-row-select multiple="true" ng-model="ctrl.selected" md-progress="ctrl.promise">
+    <thead md-head md-order="nome" md-on-reorder="ctrl.orderData">
+      <tr md-row>
+        <th md-column md-order-by="nome"><span>Nome</span></th>
+        <th md-column md-order-by="especialidade"><span>Especialidade</span></th>
+        <th md-column><span>Cargo</span></th>
+        <th md-column ><span>Editar</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row md-select="obj" md-select-id="obj.id" md-auto-select ng-repeat="obj in ctrl.paging.data">
+        <td md-cell>{{obj.nome}}</td>
+        <td md-cell>{{obj.especialidade}}</td>
+        <td md-cell>{{obj.cargo.nome}}</td>
+        <td md-cell><md-button class="md-raised"
+                               ng-click="ctrl.edit(obj.id)">Editar</md-button></td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+<md-table-pagination md-limit="ctrl.paging.meta.perPage" md-limit-options="global.optionsPerPage" md-page="ctrl.paging.meta.page" md-total="{{ctrl.paging.meta.total}}"
+    md-on-paginate="ctrl.loadPages" md-label="{page: 'Página:', rowsPerPage: 'Registros por página:', of: 'de'}" md-page-select>
+</md-table-pagination>
+
+
+
