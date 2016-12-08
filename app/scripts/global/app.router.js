@@ -45,6 +45,24 @@
         url: '/edit/:id',
         templateUrl: '../templates/analistas/analistas-form-min.html',
         controller: 'AnalistasFormCtrl as ctrl'
+      })
+      //projetos
+      .state('projetos', {
+        abstract: true,
+        url: '/projetos',
+        templateUrl: '../templates/projetos/projetos-min.html',
+      }).state('projetos.list', {
+        url: '/list',
+        templateUrl: '../templates/projetos/projetos-lista-min.html',
+        controller: 'ProjetosListaCtrl as ctrl'
+      }).state('projetos.add', {
+        url: '/add',
+        templateUrl: '../templates/projetos/projetos-form-min.html',
+        controller: 'ProjetosListaCtrl as ctrl'
+      }).state('projetos.edit/:id', {
+        url: '/edit/:id',
+        templateUrl: '../templates/projetos/projetos-form-min.html',
+        controller: 'ProjetosListaCtrl as ctrl'
       });
       ;
 

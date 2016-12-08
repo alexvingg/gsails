@@ -36,7 +36,8 @@ module.exports.routes = {
     view: 'homepage'
   },
   'get /cargo-paginated': 'CargoController.findPaginated',
-  'get /analista-paginated': 'AnalistaController.findPaginated'
+  'get /analista-paginated': 'AnalistaController.findPaginated',
+  'get /projeto-paginated': 'ProjetoController.findPaginated'
 
 
   

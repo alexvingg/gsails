@@ -2,7 +2,7 @@
 var pager = require('sails-pager');
 
 module.exports = {
-  migrate: 'safe',
+  //migrate: 'safe',
   findPaginated: function (conditions, currentPage, perPage, associatedModel, order) {
     return pager.paginate(this, conditions, currentPage, perPage, associatedModel, order);
   }
