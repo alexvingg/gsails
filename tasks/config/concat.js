@@ -39,6 +39,9 @@ module.exports = function(grunt) {
         'bower_components/angular-ui-router/release/angular-ui-router.min.js',
         'bower_components/angular-resource/angular-resource.min.js',
         'bower_components/angular-material-data-table/dist/md-data-table.min.js',
+        'bower_components/moment/min/moment.min.js',
+        //'bower_components/moment/locale/br.js',
+        'bower_components/angular-moment/angular-moment.min.js',
         ],
       dest: 'assets/js/vendor.min.js'
     }, 

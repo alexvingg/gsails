@@ -19,11 +19,11 @@ module.exports = lodash.merge({}, baseModel,{
       type: 'string',
       required: true
     },
-    data_inicio: {
+    dataInicio: {
       type: 'date',
       required: true
     },
-    data_fim: {
+    dataFim: {
       type: 'date',
       required: true
     },
@@ -40,6 +40,12 @@ module.exports = lodash.merge({}, baseModel,{
     },
     descricao: {
       required: 'O campo Descrição deve ser informado.'
+    },
+    dataInicio: {
+      required: 'O campo Data Início deve ser informado.'
+    },
+    dataFim: {
+      required: 'O campo Data Fim deve ser informado.'
     },
     analistas: {
       required: 'Selecione pelo menos um analista.'

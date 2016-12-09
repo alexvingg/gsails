@@ -58,11 +58,11 @@
       }).state('projetos.add', {
         url: '/add',
         templateUrl: '../templates/projetos/projetos-form-min.html',
-        controller: 'ProjetosListaCtrl as ctrl'
+        controller: 'ProjetosFormCtrl as ctrl'
       }).state('projetos.edit/:id', {
         url: '/edit/:id',
         templateUrl: '../templates/projetos/projetos-form-min.html',
-        controller: 'ProjetosListaCtrl as ctrl'
+        controller: 'ProjetosFormCtrl as ctrl'
       });
       ;
 

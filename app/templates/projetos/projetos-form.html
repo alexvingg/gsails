@@ -1,0 +1,57 @@
+<div flex layout="row">
+<md-content flex>
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{ctrl.dsOperacao}} Projeto</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <form ng-submit="ctrl.salvar(projetosForm)" name="projetosForm" novalidate >
+          <md-input-container flex layout="row">
+            <label>Nome Projeto</label>
+            <input required name="nome" ng-model="ctrl.projeto.nome">
+            <div ng-messages="projetosForm.nome.$error">
+              <div ng-message="required">Nome do Projeto é obrigatório.</div>
+            </div>
+          </md-input-container>
+          <md-input-container flex layout="row">
+            <label>Descrição Projeto</label>
+            <input required name="nome" ng-model="ctrl.projeto.descricao">
+            <div ng-messages="projetosForm.descricao.$error">
+              <div ng-message="required">Descrição do Projeto é obrigatório.</div>
+            </div>
+          </md-input-container>
+
+
+          <md-input-container flex layout="row">
+            <label>Data início</label>
+            <md-datepicker ng-model="ctrl.projeto.dataInicio" md-placeholder="Ecolha a data"></md-datepicker>
+            <div ng-messages="projetosForm.dataInicio.$error">
+              <div ng-message="required">Data início é obrigatório.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex layout="row">
+            <label>Data fim</label>
+            <md-datepicker ng-model="ctrl.projeto.dataFim" md-placeholder="Ecolha a data"></md-datepicker>
+            <div ng-messages="projetosForm.dataFim.$error">
+              <div ng-message="required">Data fim é obrigatório.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex layout="row">
+            <md-select multiple="true" required name="analistas" ng-model="ctrl.projeto.analistas" ng-model-options="{trackBy: '$value.id'}" placeholder="Selecione um Analista">
+              <md-option ng-value="obj" ng-repeat="obj in ctrl.analistas">{{ obj.nome }}</md-option>
+            </md-select>
+            <div ng-messages="projetosForm.projeto.analistas.$error">
+              <div ng-message="required">O Analista é obrigatório.</div>
+            </div>
+          </md-input-container>
+          
+        <md-button type="submit" class="md-raised" name="projetos.add">Salvar</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+</md-content>
+</div>

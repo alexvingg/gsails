@@ -4,9 +4,15 @@
   angular.module('app')
     .config(Config);
 
-  Config.$inject = ['$mdThemingProvider', '$mdToastProvider'];
+  angular.module('app').filter('toDate', function() {
+    return function(input) {
+        return new Date(input);
+    }
+  });
+
+  Config.$inject = ['$mdThemingProvider', '$mdToastProvider', '$mdDateLocaleProvider', 'moment'];
   /** @ngInject */
-  function Config($mdThemingProvider, $mdToastProvider) {
+  function Config($mdThemingProvider, $mdToastProvider, $mdDateLocaleProvider, moment) {
     $mdThemingProvider.theme('default')
       .primaryPalette('blue-grey')
       .accentPalette('orange')
@@ -26,6 +32,10 @@
         };
       }
     });
+
+    $mdDateLocaleProvider.formatDate = function(date) {
+       return moment(date).format('DD/MM/YYYY');
+    };
 
   }
 

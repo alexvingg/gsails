@@ -13,11 +13,10 @@
 
     vm.loadPages = loadPages;
     vm.orderData = orderData;
-
     vm.edit = editar;
-
+    
     function editar(_id){
-      //$state.go('cargos.edit/:id', {id:_id});
+      $state.go('projetos.edit/:id', {id:_id});
     }
 
     activate();
