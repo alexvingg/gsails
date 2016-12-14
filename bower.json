@@ -22,7 +22,9 @@
     "material-angular-paging": "*",
     "angular-material-data-table": "^0.10.9",
     "angular-moment":"*",
-    "moment":"*"
+    "moment":"*",
+    "angular-material-icons":"*",
+    "svg-morpheus":"*"
   },
   "resolutions": {
     "angular": "^1.5.8"

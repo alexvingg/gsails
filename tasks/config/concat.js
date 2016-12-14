@@ -42,6 +42,8 @@ module.exports = function(grunt) {
         'bower_components/moment/min/moment.min.js',
         //'bower_components/moment/locale/br.js',
         'bower_components/angular-moment/angular-moment.min.js',
+        'bower_components/angular-material-icons/angular-material-icons.min.js',
+        'bower_components/svg-morpheus/compile/minified/svg-morpheus.js',
         ],
       dest: 'assets/js/vendor.min.js'
     }, 

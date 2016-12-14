@@ -1,43 +1,69 @@
-<md-toolbar class="md-table-toolbar md-default">
-  <div class="md-toolbar-tools">
-    <span>Analistas</span>
-  </div>
+<md-card>
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">Analistas</span>
+          </md-card-header-text>
+        </md-card-header>
+        
+        <md-card-title>
+          <md-card-title-text>
+            <button ng-show="ctrl.selected.length == 0" class="md-fab md-primary md-button md-ink-ripple" type="button" ng-click="global.goto('analistas.add')">
+                <div style="margin-top: 8px;">
+                  <ng-md-icon icon="add" style="fill: white" size="24" class="ng-scope"></ng-md-icon>
+                </div>
+            </button>
 
-  <md-button class="md-raised" ng-click="global.goto('analistas.add')">Novo Analista</md-button>
+            <button ng-show="ctrl.selected.length > 0" class="md-fab md-primary md-button md-ink-ripple" type="button" ng-click="ctrl.remove();">
+                <div style="margin-top: 8px;">
+                  <ng-md-icon icon="remove" style="fill: white" size="24" class="ng-scope"></ng-md-icon>
+                </div>
+            </button>
 
-</md-toolbar>
+          </md-card-title-text>
 
-<md-toolbar class="md-table-toolbar alternate" ng-show="ctrl.selected.length > 0">
-  <div class="md-toolbar-tools">
-    <span>{{ctrl.selected.length}} {{ctrl.selected.length > 1 ? 'items selecionados' : 'item selecionado'}} </span>
-  </div>
-</md-toolbar>
+          <md-toolbar class="md-table-toolbar alternate" ng-show="ctrl.selected.length > 0">
+            <div class="md-toolbar-tools">
+              <span>{{ctrl.selected.length}} {{ctrl.selected.length > 1 ? 'items selecionados' : 'item selecionado'}} </span>
+            </div>
+          </md-toolbar>
 
-<md-table-container>
-  <table md-table md-row-select multiple="true" ng-model="ctrl.selected" md-progress="ctrl.promise">
-    <thead md-head md-order="nome" md-on-reorder="ctrl.orderData">
-      <tr md-row>
-        <th md-column md-order-by="nome"><span>Nome</span></th>
-        <th md-column md-order-by="especialidade"><span>Especialidade</span></th>
-        <th md-column><span>Cargo</span></th>
-        <th md-column ><span>Editar</span></th>
-      </tr>
-    </thead>
-    <tbody md-body>
-      <tr md-row md-select="obj" md-select-id="obj.id" md-auto-select ng-repeat="obj in ctrl.paging.data">
-        <td md-cell>{{obj.nome}}</td>
-        <td md-cell>{{obj.especialidade}}</td>
-        <td md-cell>{{obj.cargo.nome}}</td>
-        <td md-cell><md-button class="md-raised"
-                               ng-click="ctrl.edit(obj.id)">Editar</md-button></td>
-      </tr>
-    </tbody>
-  </table>
-</md-table-container>
+        </md-card-title>
+        <md-card-content>
+          
+          <md-table-container>
+            <table md-table md-row-select multiple="true" ng-model="ctrl.selected" md-progress="ctrl.promise">
+              <thead md-head md-order="nome" md-on-reorder="ctrl.orderData">
+                <tr md-row>
+                  <th md-column md-order-by="nome"><span></span></th>
+                  <th md-column md-order-by="nome"><span>Nome</span></th>
+                  <th md-column md-order-by="especialidade"><span>Especialidade</span></th>
+                  <th md-column><span>Cargo</span></th>
+                  <th md-column ><span>Editar</span></th>
+                </tr>
+              </thead>
+              <tbody md-body>
+                <tr md-row md-select="obj" md-select-id="obj.id" md-auto-select ng-repeat="obj in ctrl.paging.data">
+                  <td md-cell>
+                    <ng-md-icon icon="edit" class="ng-scope"></ng-md-icon>
+                  </td>
+                  <td md-cell>{{obj.nome}}</td>
+                  <td md-cell>{{obj.especialidade}}</td>
+                  <td md-cell>{{obj.cargo.nome}}</td>
+                  <td md-cell><md-button class="md-raised"
+                                         ng-click="ctrl.edit(obj.id)">Editar</md-button></td>
+                </tr>
+              </tbody>
+            </table>
+          </md-table-container>
 
-<md-table-pagination md-limit="ctrl.paging.meta.perPage" md-limit-options="global.optionsPerPage" md-page="ctrl.paging.meta.page" md-total="{{ctrl.paging.meta.total}}"
-    md-on-paginate="ctrl.loadPages" md-label="{page: 'Página:', rowsPerPage: 'Registros por página:', of: 'de'}" md-page-select>
-</md-table-pagination>
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="start" class="layout-align-start-stretch layout-column">
+          <md-table-pagination md-limit="ctrl.paging.meta.perPage" md-limit-options="global.optionsPerPage" md-page="ctrl.paging.meta.page" md-total="{{ctrl.paging.meta.total}}"
+              md-on-paginate="ctrl.loadPages" md-label="{page: 'Página:', rowsPerPage: 'Registros por página:', of: 'de'}" md-page-select>
+          </md-table-pagination>  
+        </md-card-actions>
+      </md-card>
 
-
-
+    </div>
+  </md-content>
+</div>
