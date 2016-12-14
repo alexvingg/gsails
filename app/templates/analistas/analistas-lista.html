@@ -34,7 +34,6 @@
             <table md-table md-row-select multiple="true" ng-model="ctrl.selected" md-progress="ctrl.promise">
               <thead md-head md-order="nome" md-on-reorder="ctrl.orderData">
                 <tr md-row>
-                  <th md-column md-order-by="nome"><span></span></th>
                   <th md-column md-order-by="nome"><span>Nome</span></th>
                   <th md-column md-order-by="especialidade"><span>Especialidade</span></th>
                   <th md-column><span>Cargo</span></th>
@@ -43,14 +42,10 @@
               </thead>
               <tbody md-body>
                 <tr md-row md-select="obj" md-select-id="obj.id" md-auto-select ng-repeat="obj in ctrl.paging.data">
-                  <td md-cell>
-                    <ng-md-icon icon="edit" class="ng-scope"></ng-md-icon>
-                  </td>
                   <td md-cell>{{obj.nome}}</td>
                   <td md-cell>{{obj.especialidade}}</td>
                   <td md-cell>{{obj.cargo.nome}}</td>
-                  <td md-cell><md-button class="md-raised"
-                                         ng-click="ctrl.edit(obj.id)">Editar</md-button></td>
+                  <td md-cell><a href ng-click="ctrl.edit(obj.id)"><ng-md-icon icon="edit" class="ng-scope"></ng-md-icon></a></td>
                 </tr>
               </tbody>
             </table>
