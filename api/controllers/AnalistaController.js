@@ -23,5 +23,10 @@ module.exports = {
 
         return res;
     },
+    listarTotalPorEspecialidade: function(req, res){
+        Analista.countCustom(['especialidade'], function (err, totalPorEspecialidade) {
+            return res.json(totalPorEspecialidade);
+        });
+    }
 };
 

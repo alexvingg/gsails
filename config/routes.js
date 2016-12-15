@@ -37,6 +37,7 @@ module.exports.routes = {
   },
   'get /cargo-paginated': 'CargoController.findPaginated',
   'get /analista-paginated': 'AnalistaController.findPaginated',
+  'get /analista-listar-total-por-especialidade': 'AnalistaController.listarTotalPorEspecialidade',
   'get /projeto-paginated': 'ProjetoController.findPaginated'
 
 

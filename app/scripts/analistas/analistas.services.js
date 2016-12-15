@@ -14,6 +14,10 @@
             },
             findPaginated: {
                 url: 'analista-paginated?page=:page&per_page=:per_page&order=:order'
+            },
+            listarTotalPorEspecialidade: {
+                url: 'analista-listar-total-por-especialidade',
+                isArray: true
             }
         });
     }

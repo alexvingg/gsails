@@ -10,6 +10,7 @@
     $stateProvider
       .state('home', {
         url: '/home',
+        controller: 'HomeCtrl as ctrl',
         templateUrl: '../templates/home-min.html'
       }).state('cargos', {
         abstract: true,

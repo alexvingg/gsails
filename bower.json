@@ -21,10 +21,11 @@
     "angular-ui-router": "ui-router#^0.3.1",
     "material-angular-paging": "*",
     "angular-material-data-table": "^0.10.9",
-    "angular-moment":"*",
-    "moment":"*",
-    "angular-material-icons":"*",
-    "svg-morpheus":"*"
+    "angular-moment": "*",
+    "moment": "*",
+    "angular-material-icons": "*",
+    "svg-morpheus": "*",
+    "angular-google-chart": "^0.1.0"
   },
   "resolutions": {
     "angular": "^1.5.8"
